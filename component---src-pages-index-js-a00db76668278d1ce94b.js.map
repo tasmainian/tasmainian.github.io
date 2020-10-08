@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/index.js"],"names":["Home"],"mappings":"2FAAA,oFAGe,SAASA,IACtB,OAAO,6BAAK,kBAAC,UAAD","file":"component---src-pages-index-js-a00db76668278d1ce94b.js","sourcesContent":["import React from \"react\"\nimport App from \"./App\"\n\nexport default function Home() {\n  return <div><App /></div>\n}\n"],"sourceRoot":""}
