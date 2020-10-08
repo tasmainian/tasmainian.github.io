@@ -20,15 +20,10 @@ export default function App() {
     AOS.init({
       delay: 200,
       duration: 1200,
-      once: false
+      once: true
     })   
     AOS.refresh()
-  });
-  // AOS.init({
-  //   delay: 200,
-  //   duration: 1200,
-  //   once: false
-  // })    
+  });  
   
   return (
     <>
@@ -36,8 +31,12 @@ export default function App() {
       <main>
       
         <Header />
-        <About />
-        <Timeline />
+        <div id="about">
+          <About />
+        </div>
+        <div id="experience">
+          <Timeline />
+        </div>
         <Projects />
         <Contact />
       </main>

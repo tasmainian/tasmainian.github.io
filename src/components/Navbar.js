@@ -17,11 +17,15 @@ export default function Navbar(props) {
             <a
               className={
                 (props.transparent ? "text-white" : "text-gray-800") +
-                " text-lg font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase"
+                " text-lg font-bold leading-relaxed inline-block mr-4 whitespace-no-wrap uppercase"
               }
               href="#top"
             >
-              HOME
+              <img 
+                alt="..."
+                src={require("../assets/img/signature.png")}
+                className="max-w-full mx-auto"
+              />
             </a>
             <button
               className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
@@ -85,6 +89,27 @@ export default function Navbar(props) {
                     }
                   />
                   <span className="inline-block ml-2 uppercase">About</span>
+                </a>
+              </li>
+
+              <li className="flex items-center">
+                <a
+                  className={
+                    (props.transparent
+                      ? "lg:text-white lg:hover:text-gray-300 text-gray-800"
+                      : "text-gray-800 hover:text-gray-600") +
+                    " px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                  }
+                  href="#experience"
+                >
+                  <i
+                    className={
+                      (props.transparent
+                        ? "lg:text-gray-300 text-gray-500"
+                        : "text-gray-500")
+                    }
+                  />
+                  <span className="inline-block ml-2 uppercase">Experience</span>
                 </a>
               </li>
 

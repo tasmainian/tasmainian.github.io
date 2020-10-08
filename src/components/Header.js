@@ -1,18 +1,45 @@
 import React from "react";
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image/withIEPolyfill"
 
 export default function Header(props) {
+  const data = useStaticQuery(graphql`
+    query Images {
+      image: file(relativePath: {eq: "DSC_0532.jpg"}) {
+        id
+        childImageSharp {
+          fixed {
+            ...GatsbyImageSharpFixed
+          }
+          fluid (quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
   return (
     <>
         <div className="relative pt-16 pb-32 flex content-center items-center justify-center"
             style={{
               minHeight: "95vh"
             }}>
-          <div className="absolute top-0 w-full h-full bg-center bg-cover"
-              style={{
-                backgroundImage: `url(${require("../assets/img/DSC_0532.jpg")})`
-              }}>
-            <span id="blackOverlay" className="w-full h-full absolute opacity-50 bg-black"></span>
+          <div className="absolute top-0 w-full h-full bg-center bg-cover">
+            <span id="blackOverlay" className="w-full h-full absolute opacity-5s0 bg-black">
+                <Img fluid={data.image.childImageSharp.fluid}   style={{ height: "100%", width: "100%" }} imgStyle={{ objectFit: "contain", filter: "brightness(50%)" }} />
+            </span>
           </div>
+          {/* <Img className="absolute top-0 w-full h-full bg-center bg-cover"
+              fluid={data.image.childImageSharp.fluid}>
+            <span id="blackOverlay" className="w-full h-full absolute opacity-50 bg-black"></span>
+          </Img> */}
+          {/* <BackgroundImage
+            Tag="section"
+            className={"absolute top-0 w-full h-full bg-center bg-cover"}
+            fluid={data.image.childImageSharp.fluid}
+            backgroundColor={`#040e18`}>
+          <span id="blackOverlay" className="w-full h-full absolute opacity-50 bg-black"></span>
+        </BackgroundImage> */}
           <div className="container relative mx-auto" data-sal="fade" data-sal-delay="300" data-sal-easing="ease">
               <div className="items-center flex flex-wrap">
                 <div className="w-full px-4 ml-auto mr-auto text-center">
@@ -23,7 +50,7 @@ export default function Header(props) {
                     <p className="mt-4 text-lg text-gray-300 ">
                       Software Engineer | Full-Stack Developer
                     </p>
-                    <a href="/Tasmiha_Resume_August_2020.pdf" type="button">
+                    <a href="../../static/Tasmiha_Resume_August_2020.pdf" type="button">
                       <button class="mt-4 bg-transparent hover:bg-teal-500 text-teal-700 font-semibold hover:text-white py-2 px-4 border border-teal-500 hover:border-transparent rounded">
                         Resume
                       </button>
