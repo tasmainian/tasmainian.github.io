@@ -13,7 +13,10 @@ import "../styles/global.css"
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export default function App() {
-
+  if (typeof window !== "undefined") {
+    // eslint-disable-next-line global-require
+    require("smooth-scroll")('a[href*="#"]')
+  }
   useEffect(() => {
     const isBrowser = typeof window !== "undefined";
     const AOS = isBrowser ? require("aos") : undefined;

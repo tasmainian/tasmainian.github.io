@@ -1,4 +1,5 @@
-import React from "react";
+import React from "react"
+import { Link } from "gatsby"
 
 export default function Navbar(props) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -12,21 +13,13 @@ export default function Navbar(props) {
           " flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg"
         }
       >
-        <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
+        <div className="container top-0 absolute px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-            <a
-              className={
-                (props.transparent ? "text-white" : "text-gray-800") +
-                " text-lg font-bold leading-relaxed inline-block mr-4 whitespace-no-wrap uppercase"
-              }
-              href="#top"
-            >
               <img 
                 alt="..."
                 src={require("../assets/img/signature.png")}
                 className="max-w-full mx-auto"
               />
-            </a>
             <button
               className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
@@ -72,14 +65,14 @@ export default function Navbar(props) {
             </ul> */}
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               <li className="flex items-center">
-                <a
+                <Link
                   className={
                     (props.transparent
-                      ? "lg:text-white lg:hover:text-gray-300 text-gray-800"
-                      : "text-gray-800 hover:text-gray-600") +
-                    " px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                      ? "lg:text-white lg:hover:text-gray-300 text-white-800"
+                      : "text-white-800 hover:text-white-600") +
+                    " px-3 py-4 lg:py-2 flex items-center text-base uppercase font-bold"
                   }
-                  href="#about"
+                  to="/#about"
                 >
                   <i
                     className={
@@ -89,18 +82,18 @@ export default function Navbar(props) {
                     }
                   />
                   <span className="inline-block ml-2 uppercase">About</span>
-                </a>
+                </Link>
               </li>
 
               <li className="flex items-center">
-                <a
+                <Link
                   className={
                     (props.transparent
                       ? "lg:text-white lg:hover:text-gray-300 text-gray-800"
                       : "text-gray-800 hover:text-gray-600") +
-                    " px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                    " px-3 py-4 lg:py-2 flex items-center text-base uppercase font-bold"
                   }
-                  href="#experience"
+                  to="/#experience"
                 >
                   <i
                     className={
@@ -110,18 +103,18 @@ export default function Navbar(props) {
                     }
                   />
                   <span className="inline-block ml-2 uppercase">Experience</span>
-                </a>
+                </Link>
               </li>
 
               <li className="flex items-center">
-                <a
+                <Link
                   className={
                     (props.transparent
                       ? "lg:text-white lg:hover:text-gray-300 text-gray-800"
                       : "text-gray-800 hover:text-gray-600") +
-                    " px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                    " px-3 py-4 lg:py-2 flex items-center text-base uppercase font-bold"
                   }
-                  href="#pablo"
+                  to="/#pablo"
                 >
                   <i
                     className={
@@ -131,7 +124,7 @@ export default function Navbar(props) {
                     }
                   />
                   <span className="inline-block ml-2 uppercase">Projects</span>
-                </a>
+                </Link>
               </li>
 
               <li className="flex items-center">
@@ -140,7 +133,7 @@ export default function Navbar(props) {
                     (props.transparent
                       ? "lg:text-white lg:hover:text-gray-300 text-gray-800"
                       : "text-gray-800 hover:text-gray-600") +
-                    " px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                    " px-3 py-4 lg:py-2 flex items-center text-base uppercase font-bold"
                   }
                   href="#pablo"
                 >
