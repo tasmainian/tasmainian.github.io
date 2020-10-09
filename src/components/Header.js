@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
-
+import resume from "../assets/pdf/Tasmiha_Resume_August_2020.pdf"
 export default function Header(props) {
   const data = useStaticQuery(graphql`
     query Images {
@@ -50,7 +50,7 @@ export default function Header(props) {
                     <p className="mt-4 text-lg text-gray-300 ">
                       Software Engineer | Full-Stack Developer
                     </p>
-                    <a href="../../static/Tasmiha_Resume_August_2020.pdf" type="button">
+                    <a href={resume} type="button">
                       <button class="mt-4 bg-transparent hover:bg-teal-500 text-teal-700 font-semibold hover:text-white py-2 px-4 border border-teal-500 hover:border-transparent rounded">
                         Resume
                       </button>
