@@ -9,28 +9,30 @@ export default function Projects(props) {
           nodes {
             data {
               user {
-                repositories {
-                  nodes {
-                    description
-                    forkCount
-                    id
-                    name
-                    openGraphImageUrl
-                    updatedAt(fromNow: true)
-                    url
-                    primaryLanguage {
+                pinnedItems {
+                  edges {
+                    node {
+                      description
+                      forkCount
+                      id
                       name
-                    }
-                    languages {
-                      nodes {
+                      openGraphImageUrl
+                      updatedAt(fromNow: true)
+                      url
+                      primaryLanguage {
                         name
                       }
-                    }
-                    readme {
-                      text
-                    }
-                    stargazers {
-                      totalCount
+                      languages {
+                        nodes {
+                          name
+                        }
+                      }
+                      readme {
+                        text
+                      }
+                      stargazers {
+                        totalCount
+                      }
                     }
                   }
                 }
@@ -41,7 +43,7 @@ export default function Projects(props) {
       }
     `
   )
-  const repos = data.allGithubData.nodes[0].data.user.repositories.nodes
+  const repos = data.allGithubData.nodes[0].data.user.pinnedItems.edges
   console.log(repos)
 
   return (
@@ -73,55 +75,35 @@ export default function Projects(props) {
                 <h2 className="text-4xl font-semibold text-white">
                   Projects
                 </h2>
-                <p className="text-lg leading-relaxed mt-4 mb-4 text-gray-500">
-                  Github Repos
+                <p className="text-lg leading-relaxed mt-4 mb-4 text-teal-100">
+                  These are the projects I have pinned from my Github repository.
                 </p>
               </div>
             </div>
-            <div className="flex flex-wrap mt-12 justify-center">
-              <div className="w-full lg:w-3/12 px-4 text-center">
-                <div className="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
-                  <i className="fas fa-medal text-xl"></i>
-                </div>
-                <h6 className="text-xl mt-5 font-semibold text-white">
-                  Excelent Services
-                </h6>
-                <p className="mt-2 mb-4 text-gray-500">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-              <div className="w-full lg:w-3/12 px-4 text-center">
-                <div className="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
-                  <i className="fas fa-poll text-xl"></i>
-                </div>
-                <h5 className="text-xl mt-5 font-semibold text-white">
-                  Grow your market
-                </h5>
-                <p className="mt-2 mb-4 text-gray-500">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-              <div className="w-full lg:w-3/12 px-4 text-center">
-                <div className="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
-                  <i className="fas fa-lightbulb text-xl"></i>
-                </div>
-                <h5 className="text-xl mt-5 font-semibold text-white">
-                  Launch time
-                </h5>
-                <p className="mt-2 mb-4 text-gray-500">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <ul>
-                  {
-                    repos.map(repo =>
-                      <li key={repo.id} className="text-teal-100">{repo.name}: {repo.description}</li>
-                    )
-                  }
-                </ul>
-              </div>
+            <div className="flex flex-wrap justify-center">
+            {
+                  repos.map((repo, i) => {
+                      return (
+                        <div data-aos="flip-up" className="my-5 mx-5 w-full lg:w-3/12 px-4 text-center bg-white hover:bg-gray-500 shadow-lg rounded-lg">
+                          <h6 className="text-xl mt-5 font-semibold text-white">
+                            Excelent Services
+                          </h6>
+                          <p className="mt-2 mb-4 text-gray-500 hover:text-white">
+                            <li key={repo.node.id} className="text-gray-500" onClick={() => window.location.href=repo.node.url}>{repo.node.name}: {repo.node.description}</li>
+  
+                          </p>
+                        </div>
+                      )
+                  })
+                }
+
+              {/* <ul>
+                {
+                  repos.map(repo =>
+                    <li key={repo.id} className="text-teal-100">{repo.name}: {repo.description}</li>
+                  )
+                }
+              </ul> */}
             </div>
           </div>
     </section>

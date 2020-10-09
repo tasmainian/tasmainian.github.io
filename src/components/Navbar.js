@@ -127,7 +127,7 @@ export default function Navbar(props) {
                 </Link>
               </li>
 
-              <li className="flex items-center">
+              {/* <li className="flex items-center">
                 <Link
                   className={
                     (props.transparent
@@ -146,7 +146,7 @@ export default function Navbar(props) {
                   />
                   <span className="inline-block ml-2">Contact</span>
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
