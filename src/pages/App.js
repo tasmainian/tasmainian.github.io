@@ -5,7 +5,7 @@ import Footer from "../components/Footer.js";
 import Header from "../components/Header.js";
 import About from "../components/About.js";
 import Projects from "../components/Projects.js";
-import Contact from "../components/Contact.js";
+// import Contact from "../components/Contact.js";
 import Timeline from "../components/Timeline.js";
 // import AOS fronm 'aos';
 import 'aos/dist/aos.css'

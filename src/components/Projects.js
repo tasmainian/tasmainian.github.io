@@ -1,5 +1,5 @@
 import React from "react";
-import { useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 
 export default function Projects(props) {
   const data = useStaticQuery(
@@ -48,7 +48,7 @@ export default function Projects(props) {
 
   return (
     <>
-        <section className="pb-20 mt-20 relative block bg-teal-500">
+        <section className="mt-20 relative block bg-teal-500">
           <div
             className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
             style={{ height: "80px", transform: "translateZ(0)" }}
@@ -84,26 +84,19 @@ export default function Projects(props) {
             {
                   repos.map((repo, i) => {
                       return (
-                        <div data-aos="flip-up" className="my-5 mx-5 w-full lg:w-3/12 px-4 text-center bg-white hover:bg-gray-500 shadow-lg rounded-lg">
-                          <h6 className="text-xl mt-5 font-semibold text-white">
-                            Excelent Services
-                          </h6>
-                          <p className="mt-2 mb-4 text-gray-500 hover:text-white">
-                            <li key={repo.node.id} className="text-gray-500" onClick={() => window.location.href=repo.node.url}>{repo.node.name}: {repo.node.description}</li>
-  
-                          </p>
+                        <div data-aos="flip-up" className="my-6 mx-5 w-full lg:w-3/12 px-4">
+                          <div className="w-full h-full transition duration-500 text-center bg-white border-solid border-4 border-transparent transform hover:-translate-y-1 hover:scale-110 shadow-lg hover:shadow-focus rounded-lg">
+                            <h6 className="text-xl mt-5 font-semibold text-white">
+                              Excelent Services
+                            </h6>
+                            <p className="mt-2 mb-4 text-gray-500 hover:text-white">
+                              <li key={repo.node.id} className="text-gray-500" onClick={() => window.location.href=repo.node.url}>{repo.node.name}: {repo.node.description}</li>
+                            </p>
+                          </div>
                         </div>
                       )
                   })
                 }
-
-              {/* <ul>
-                {
-                  repos.map(repo =>
-                    <li key={repo.id} className="text-teal-100">{repo.name}: {repo.description}</li>
-                  )
-                }
-              </ul> */}
             </div>
           </div>
     </section>
