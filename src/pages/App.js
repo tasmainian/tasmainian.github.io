@@ -40,8 +40,10 @@ export default function App() {
         <div id="experience">
           <Timeline />
         </div>
-        <Projects />
-        <Contact />
+        <div id="projects">
+          <Projects />
+        </div>
+        {/* <Contact /> */}
       </main>
       <Footer />
     </>

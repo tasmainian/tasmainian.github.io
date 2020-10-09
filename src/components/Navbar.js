@@ -114,7 +114,7 @@ export default function Navbar(props) {
                       : "text-gray-800 hover:text-gray-600") +
                     " px-3 py-4 lg:py-2 flex items-center text-base uppercase font-bold"
                   }
-                  to="/#pablo"
+                  to="/#projects"
                 >
                   <i
                     className={
@@ -128,14 +128,14 @@ export default function Navbar(props) {
               </li>
 
               <li className="flex items-center">
-                <a
+                <Link
                   className={
                     (props.transparent
                       ? "lg:text-white lg:hover:text-gray-300 text-gray-800"
                       : "text-gray-800 hover:text-gray-600") +
                     " px-3 py-4 lg:py-2 flex items-center text-base uppercase font-bold"
                   }
-                  href="#pablo"
+                  to="/#contact"
                 >
                   <i
                     className={
@@ -145,7 +145,7 @@ export default function Navbar(props) {
                     }
                   />
                   <span className="inline-block ml-2">Contact</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
