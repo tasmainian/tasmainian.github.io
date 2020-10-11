@@ -8,7 +8,7 @@ export default function Timeline(props) {
   const VALUES =state.experience.map(e => {
     return e.date
   })
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(VALUES.length-1);
   return (
     <>
     <section className="relative" data-aos="fade-up">
