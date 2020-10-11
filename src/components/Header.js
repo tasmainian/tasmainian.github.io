@@ -29,17 +29,6 @@ export default function Header(props) {
                 <Img fluid={data.image.childImageSharp.fluid}   style={{ height: "100%", width: "100%" }} imgStyle={{ objectFit: "contain", filter: "brightness(50%)" }} />
             </span>
           </div>
-          {/* <Img className="absolute top-0 w-full h-full bg-center bg-cover"
-              fluid={data.image.childImageSharp.fluid}>
-            <span id="blackOverlay" className="w-full h-full absolute opacity-50 bg-black"></span>
-          </Img> */}
-          {/* <BackgroundImage
-            Tag="section"
-            className={"absolute top-0 w-full h-full bg-center bg-cover"}
-            fluid={data.image.childImageSharp.fluid}
-            backgroundColor={`#040e18`}>
-          <span id="blackOverlay" className="w-full h-full absolute opacity-50 bg-black"></span>
-        </BackgroundImage> */}
           <div className="container relative mx-auto" data-sal="fade" data-sal-delay="300" data-sal-easing="ease">
               <div className="items-center flex flex-wrap">
                 <div className="w-full px-4 ml-auto mr-auto text-center">
