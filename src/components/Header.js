@@ -34,7 +34,7 @@ export default function Header(props) {
                 <div className="w-full px-4 ml-auto mr-auto text-center">
                   <div className="pr-12">
                     <h1 className="text-white font-semibold text-5xl uppercase">
-                      <span class="text-teal-500" >I AM</span> TASMIHA HASSAN
+                      <span class="text-teal-500" >Tasmiha</span> HASSAN
                     </h1>
                     <p className="mt-4 text-lg text-gray-300 ">
                       Software Engineer | Full-Stack Developer

@@ -24,6 +24,8 @@ export default function Timeline(props) {
             indexClick={(index) => {
               setValue(index);
             }}
+            // isOpenBeginning = {false}
+            // isOpenEnding = {false}
             values={ VALUES } />
         </div>
         <div className='text-center'>
