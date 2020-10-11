@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "gatsby";
 
 export default function Footer() {
   return (
@@ -33,30 +34,38 @@ export default function Footer() {
                 Find me on any of these platforms.
               </h5>
               <div className="mt-6">
+              <a href="https://twitter.com/Tasmainian">
                 <button
                   className="bg-white text-teal-500 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 pt-1"
                   type="button"
                 >
                   <i className="fill-current fab fa-twitter fa-lg"></i>
                 </button>
+              </a>
+              <a href="https://www.facebook.com/htasmiha">
                 <button
                   className="bg-white text-teal-500 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 pt-1"
                   type="button"
                 >
                   <i className="fill-current fab fa-facebook fa-lg"></i>
                 </button>
+              </a>
+              <a href="https://www.linkedin.com/in/thas/">
                 <button
                   className="bg-white text-teal-500 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 pt-1"
                   type="button"
                 >
                   <i className="fill-current fab fa-linkedin-in fa-lg"></i>
                 </button>
+              </a>
+              <a href="https://github.com/tasmainian">
                 <button
                   className="bg-white text-teal-500 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 pt-1"
                   type="button"
                 >
                   <i className="fill-current fab fa-github fa-lg"></i>
                 </button>
+              </a>
               </div>
             </div>
           </div>
