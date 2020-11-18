@@ -5,14 +5,14 @@ export default function ExperienceCard(props) {
   return (
     <>
       <div className="container mx-auto flex content-center items-center justify-center">
-        <div className="w-4/6 rounded border-2 border-gray-200 overflow-hidden shadow-lg">
+        <div className="lg:w-4/6 rounded border-2 border-gray-200 overflow-hidden shadow-lg">
           <div className="md:flex bg-white rounded-lg p-6">
             <img
               className="h-16 w-16 md:h-24 md:w-24 mx-auto md:mx-0 md:mr-6"
               alt=""
               src={require("../assets/img/" + experience.image)}
             />
-            <div className="text-center md:text-left w-4/12">
+            <div className="text-center w-full md:text-left md:w-4/12">
               <h2 className="text-lg">{experience.company}</h2>
               <div className="text-gray-600 text-xs">{experience.location}</div>
               <div className="text-teal-500">{experience.position}</div>
@@ -23,7 +23,7 @@ export default function ExperienceCard(props) {
                 {experience.range}
               </div>
             </div>
-            <div className="border-l-2 mx-2 border-teal-300 text-center md:text-left w-8/12">
+            <div className="md:border-l-2 md:mx-2 md:border-teal-300 mx-0 text-left md:w-8/12">
               <div className="ml-2">
                 <ul className="ml-4 list-square">
                   {experience.roles.map(e => {
