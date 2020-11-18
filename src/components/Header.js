@@ -53,44 +53,48 @@ export default function Header(props) {
                 <p className="mt-4 text-lg text-gray-300 ">
                   Software Engineer | Full-Stack Developer
                 </p>
-                <a href={resume} type="button">
-                  <button className="mt-4 bg-transparent hover:bg-teal-500 text-teal-700 font-semibold hover:text-white py-2 px-4 border border-teal-500 hover:border-transparent rounded">
+                {/* <a href={resume} type="button"> */}
+                  <button href={resume} className="mt-4 bg-transparent hover:bg-teal-500 text-teal-700 font-semibold hover:text-white py-2 px-4 border border-teal-500 hover:border-transparent rounded">
                     Resume
                   </button>
-                </a>
+                {/* </a> */}
                 <div className="mt-6">
-                  <a href="https://twitter.com/Tasmainian" type="button">
+                  {/* <a href="https://twitter.com/Tasmainian" type="button"> */}
                     <button
                       className="bg-transparent hover:bg-gray-800 text-teal-500 shadow-lg font-normal h-12 w-12 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-1 p-2"
                       type="button"
+                      href="https://twitter.com/Tasmainian"
                     >
                       <i className="fill-current fab fa-twitter fa-2x"></i>
                     </button>
-                  </a>
-                  <a href="https://www.facebook.com/htasmiha/" type="button">
+                  {/* </a> */}
+                  {/* <a href="https://www.facebook.com/htasmiha/" type="button"> */}
                     <button
                       className="bg-transparent hover:bg-gray-800 text-teal-500 shadow-lg font-normal h-12 w-12 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-1 p-2"
                       type="button"
+                      href="https://www.facebook.com/htasmiha/"
                     >
                       <i className="fill-current fab fa-facebook fa-2x"></i>
                     </button>
-                  </a>
-                  <a href="https://www.linkedin.com/in/thas/" type="button">
+                  {/* </a> */}
+                  {/* <a href="https://www.linkedin.com/in/thas/" type="button"> */}
                     <button
                       className="bg-transparent hover:bg-gray-800 text-teal-500 shadow-lg font-normal h-12 w-12 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-1 p-2"
                       type="button"
+                      href="https://www.linkedin.com/in/thas/"
                     >
                       <i className="fill-current fab fa-linkedin-in fa-2x"></i>
                     </button>
-                  </a>
-                  <a href="https://github.com/tasmainian" type="button">
+                  {/* </a> */}
+                  {/* <a href="https://github.com/tasmainian" type="button"> */}
                     <button
                       className="bg-transparent hover:bg-gray-800 text-teal-500 shadow-lg font-normal h-12 w-12 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-1 p-2"
                       type="button"
+                      href="https://github.com/tasmainian"
                     >
                       <i className="fill-current fab fa-github fa-2x"></i>
                     </button>
-                  </a>
+                  {/* </a> */}
                 </div>
               </div>
             </div>
