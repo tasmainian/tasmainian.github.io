@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 export default function Navbar(props) {
-  const [navbarOpen, setNavbarOpen] = React.useState(false);
+  const [navbarOpen, setNavbarOpen] = React.useState(false)
   return (
     <>
       <nav
@@ -15,11 +15,11 @@ export default function Navbar(props) {
       >
         <div className="container top-0 absolute px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-              <img 
-                alt="..."
-                src={require("../assets/img/signature.png")}
-                className="max-w-full mx-auto"
-              />
+            <img
+              alt="..."
+              src={require("../assets/img/signature.png")}
+              className="max-w-full mx-auto"
+            />
             <button
               className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
@@ -76,9 +76,9 @@ export default function Navbar(props) {
                 >
                   <i
                     className={
-                      (props.transparent
+                      props.transparent
                         ? "lg:text-gray-300 text-gray-500"
-                        : "text-gray-500")
+                        : "text-gray-500"
                     }
                   />
                   <span className="inline-block ml-2 uppercase">About</span>
@@ -97,12 +97,14 @@ export default function Navbar(props) {
                 >
                   <i
                     className={
-                      (props.transparent
+                      props.transparent
                         ? "lg:text-gray-300 text-gray-500"
-                        : "text-gray-500")
+                        : "text-gray-500"
                     }
                   />
-                  <span className="inline-block ml-2 uppercase">Experience</span>
+                  <span className="inline-block ml-2 uppercase">
+                    Experience
+                  </span>
                 </Link>
               </li>
 
@@ -118,9 +120,9 @@ export default function Navbar(props) {
                 >
                   <i
                     className={
-                      (props.transparent
+                      props.transparent
                         ? "lg:text-gray-300 text-gray-500"
-                        : "text-gray-500")
+                        : "text-gray-500"
                     }
                   />
                   <span className="inline-block ml-2 uppercase">Projects</span>
@@ -152,5 +154,5 @@ export default function Navbar(props) {
         </div>
       </nav>
     </>
-  );
+  )
 }
