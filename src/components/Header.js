@@ -59,7 +59,7 @@ export default function Header(props) {
                   </button>
                 </a>
                 <div className="mt-6">
-                  <a href="https://twitter.com/Tasmainian" type="button">
+                  <a href="https://twitter.com/Tasmainian">
                     <button
                       className="bg-transparent hover:bg-gray-800 text-teal-500 shadow-lg font-normal h-12 w-12 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-1 p-2"
                       type="button"
@@ -67,7 +67,7 @@ export default function Header(props) {
                       <i className="fill-current fab fa-twitter fa-2x"></i>
                     </button>
                   </a>
-                  <a href="https://www.facebook.com/htasmiha/" type="button">
+                  <a href="https://www.facebook.com/htasmiha/">
                     <button
                       className="bg-transparent hover:bg-gray-800 text-teal-500 shadow-lg font-normal h-12 w-12 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-1 p-2"
                       type="button"
@@ -76,7 +76,7 @@ export default function Header(props) {
                       <i className="fill-current fab fa-facebook fa-2x"></i>
                     </button>
                   </a>
-                  <a href="https://www.linkedin.com/in/thas/" type="button">
+                  <a href="https://www.linkedin.com/in/thas/">
                     <button
                       className="bg-transparent hover:bg-gray-800 text-teal-500 shadow-lg font-normal h-12 w-12 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-1 p-2"
                       type="button"
@@ -85,7 +85,7 @@ export default function Header(props) {
                       <i className="fill-current fab fa-linkedin-in fa-2x"></i>
                     </button>
                   </a>
-                  <a href="https://github.com/tasmainian" type="button">
+                  <a href="https://github.com/tasmainian">
                     <button
                       className="bg-transparent hover:bg-gray-800 text-teal-500 shadow-lg font-normal h-12 w-12 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-1 p-2"
                       type="button"
