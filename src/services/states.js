@@ -97,18 +97,18 @@ export default {
         "My favourite part of this project was testing the app directly with the target users and recieving real-time feedback",
       ],
     },
-    // {
-    //   date: "2021-06-28",
-    //   company: "Microsoft",
-    //   image: "microsoft.jpeg",
-    //   position: "Software Engineer",
-    //   type: "Full-Time",
-    //   timeline: "June 2021 - Present",
-    //   range: "Present",
-    //   location: "Vancouver, British Columbia, Canada",
-    //   roles: [
-    //     "Incoming 2021 New Graduate"
-    //   ],
-    // },
+    {
+      date: "2021-06-28",
+      company: "Microsoft",
+      image: "microsoft.jpeg",
+      position: "Software Engineer",
+      type: "Full-Time",
+      timeline: "June 2021 - Present",
+      range: "Present",
+      location: "Vancouver, British Columbia, Canada",
+      roles: [
+        "Incoming 2021 New Graduate"
+      ],
+    },
   ],
 }
