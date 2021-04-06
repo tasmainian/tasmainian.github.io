@@ -80,5 +80,35 @@ export default {
         "My favourite project was gathering customer requirements and implementing a loyalty program into the check-in kiosks",
       ],
     },
+    {
+      date: "2021-01-06",
+      company: "McMaster University - Department of Engineering",
+      image: "mcmaster.png",
+      position: "Program Support Assistant",
+      type: "Work Study",
+      timeline: "Jan 2021 - Apr 2021",
+      range: "4 months",
+      location: "Hamilton, Ontario, Canada",
+      roles: [
+        "Awarded 3rd place in the Global Convergence Digital Inclusion Challenge 2020",
+        "Lead the development of an iOS mobile application called i.AM that helps people with cognitive disabilities perform daily tasks",
+        "Presented and networked with over 100 industry professionals to gather funding",
+        "Used frameworks and tools such as React Native, Firebase, and TestFlight",
+        "My favourite part of this project was testing the app directly with the target users and recieving real-time feedback",
+      ],
+    },
+    // {
+    //   date: "2021-06-28",
+    //   company: "Microsoft",
+    //   image: "microsoft.jpeg",
+    //   position: "Software Engineer",
+    //   type: "Full-Time",
+    //   timeline: "June 2021 - Present",
+    //   range: "Present",
+    //   location: "Vancouver, British Columbia, Canada",
+    //   roles: [
+    //     "Incoming 2021 New Graduate"
+    //   ],
+    // },
   ],
 }
