@@ -107,7 +107,7 @@ export default {
       range: "Present",
       location: "Vancouver, British Columbia, Canada",
       roles: [
-        "Incoming 2021 New Graduate"
+        "New Graduate Role"
       ],
     },
   ],
