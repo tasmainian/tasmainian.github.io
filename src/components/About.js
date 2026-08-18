@@ -53,20 +53,24 @@ export default function About(props) {
                 <p className="mt-4 text-lg leading-relaxed text-gray-600">
                   My name is{" "}
                   <span className=" text-teal-500">Tasmiha Hassan</span>. I am
-                  an aspiring{" "}
-                  <span className=" text-teal-500">Software Developer</span> who
-                  has experience building Web and Mobile applications using{" "}
-                  <span className=" text-teal-500">Spring MVC</span> /{" "}
-                  <span className=" text-teal-500">Reactjs</span> /{" "}
-                  <span className=" text-teal-500">Nodejs</span> /{" "}
-                  <span className=" text-teal-500">React Native</span>. I am
-                  majoring in
+                  a{" "}
+                  <span className=" text-teal-500">Software Engineer 2</span>{" "}
+                  at <span className=" text-teal-500">Microsoft</span>, where
+                  I work on Insider Risk Management, building full-stack
+                  features across <span className=" text-teal-500">React</span>
+                  , <span className=" text-teal-500">C#/.NET</span>, and{" "}
+                  <span className=" text-teal-500">Azure</span>. Earlier in my
+                  career I built web and mobile applications using{" "}
+                  <span className=" text-teal-500">Spring MVC</span>,{" "}
+                  <span className=" text-teal-500">Reactjs</span>,{" "}
+                  <span className=" text-teal-500">Nodejs</span>, and{" "}
+                  <span className=" text-teal-500">React Native</span>. I
+                  graduated with a degree in
                   <span className=" text-teal-500">
                     {" "}
                     Software Engineering
                   </span>{" "}
-                  at McMaster University and looking foward to graduating with
-                  the class of 2021!
+                  from McMaster University, class of 2021.
                 </p>
 
                 {/* <ul className="list-none mt-1">
