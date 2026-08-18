@@ -4,9 +4,9 @@ import Navbar from "../components/Navbar.js"
 import Footer from "../components/Footer.js"
 import Header from "../components/Header.js"
 import About from "../components/About.js"
-import Projects from "../components/Projects.js"
+import Projects from "../components/Projects.jsx"
 // import Contact from "../components/Contact.js";
-import Timeline from "../components/Timeline.js"
+import Experience from "../components/Experience.jsx"
 // import AOS fronm 'aos';
 import "aos/dist/aos.css"
 import "../styles/global.css"
@@ -36,12 +36,8 @@ export default function App() {
         <div id="about">
           <About />
         </div>
-        <div id="experience">
-          <Timeline />
-        </div>
-        <div id="projects">
-          <Projects />
-        </div>
+        <Experience />
+        <Projects />
         {/* <Contact /> */}
       </main>
       <Footer />

@@ -7,3 +7,8 @@ html {
     scroll-behavior: smooth;
     font-family: 'Rubik', sans-serif;
 }
+
+/* Used by the Experience and Projects section eyebrow labels. */
+.section-heading {
+  @apply text-sm font-mono uppercase tracking-[0.3em] text-emerald-500 dark:text-emerald-400;
+}
