@@ -1,46 +1,14 @@
-import React, { useEffect } from "react"
+import React from "react"
 
-import Navbar from "../components/Navbar.js"
-import Footer from "../components/Footer.js"
-import Header from "../components/Header.js"
-import About from "../components/About.js"
-import Projects from "../components/Projects.jsx"
-// import Contact from "../components/Contact.js";
-import Experience from "../components/Experience.jsx"
-// import AOS fronm 'aos';
-import "aos/dist/aos.css"
+import NightWall from "../components/NightWall.jsx"
 import "../styles/global.css"
-import "@fortawesome/fontawesome-free/css/all.min.css"
 
+// The previous multi-section layout (Navbar, Header, About, Experience,
+// Projects, Footer) is kept in src/components and preserved in tasmainian-v1.
 export default function App() {
-  if (typeof window !== "undefined") {
-    // eslint-disable-next-line global-require
-    require("smooth-scroll")('a[href*="#"]')
-  }
-  useEffect(() => {
-    const isBrowser = typeof window !== "undefined"
-    const AOS = isBrowser ? require("aos") : undefined
-    AOS.init({
-      delay: 200,
-      duration: 1200,
-      once: true,
-    })
-    AOS.refresh()
-  })
-
   return (
-    <>
-      <Navbar transparent />
-      <main>
-        <Header />
-        <div id="about">
-          <About />
-        </div>
-        <Experience />
-        <Projects />
-        {/* <Contact /> */}
-      </main>
-      <Footer />
-    </>
+    <main>
+      <NightWall />
+    </main>
   )
 }
