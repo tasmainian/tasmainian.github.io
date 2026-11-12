@@ -12,3 +12,7 @@ html {
 .section-heading {
   @apply text-sm font-mono uppercase tracking-[0.3em] text-emerald-500 dark:text-emerald-400;
 }
+/* Night Wall: the rope from the top pitch to the panel only reads side by side. */
+@media (max-width: 940px) {
+  .ropelink { display: none; }
+}
