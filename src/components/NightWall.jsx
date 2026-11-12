@@ -139,8 +139,58 @@ function useRouteReveal(count) {
   return revealed
 }
 
-function Wall({ picked, onPick }) {
-  const revealed = useRouteReveal(pitches.length)
+// The rope runs from the top pitch across the gap and up behind the panel to
+// the anchor, so it only comes out once the climber has reached the top.
+const ROPE_FADE = `opacity 700ms ease ${TRACE_MS}ms`
+
+const ropeStroke = { fill: "none", stroke: C.coral, strokeWidth: 2, strokeLinecap: "round", vectorEffect: "non-scaling-stroke" }
+
+// Leaves the top pitch and drops to meet the panel's left edge, 200px down.
+function RopeFromTop({ shown }) {
+  const top = pitches[pitches.length - 1]
+  return (
+    <svg className="ropelink absolute" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"
+      style={{ left: top.x, top: top.y, width: `calc(${100 - parseFloat(top.x)}% + 32px)`, height: `calc(200px - ${top.y})`, overflow: "visible", opacity: shown ? 1 : 0, transition: ROPE_FADE }}>
+      <path d="M0,0 C8,62 50,100 100,100" style={ropeStroke} />
+    </svg>
+  )
+}
+
+// Picks the rope up at the panel's left edge and runs it behind the panel to the locker.
+function RopeToAnchor({ shown }) {
+  return (
+    <svg className="ropelink absolute left-0 top-0" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"
+      style={{ zIndex: -1, width: "50%", height: 80, overflow: "visible", opacity: shown ? 1 : 0, transition: ROPE_FADE }}>
+      <path d="M0,100 C60,100 100,80 100,-14" style={ropeStroke} />
+    </svg>
+  )
+}
+
+// Two bolts, slings equalized into one locking carabiner that holds the panel.
+function Anchor() {
+  const carabiner = "M-3,0 H3 A5,5 0 0 1 8,5 V19 A9,9 0 0 1 -1,28 A6,6 0 0 1 -7,22 V4 A4,4 0 0 1 -3,0 Z"
+  return (
+    <svg width="120" height="110" viewBox="0 0 120 110" className="absolute" aria-hidden="true"
+      style={{ left: "50%", top: -92, marginLeft: -60, overflow: "visible" }}>
+      <g fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M18,12 L57,74 M24,9 L61,71" stroke={C.coral} />
+        <path d="M102,12 L63,74 M96,9 L59,71" stroke={C.coral} />
+        {[20, 100].map(cx => (
+          <React.Fragment key={cx}>
+            <circle cx={cx} cy="8" r="6" stroke={C.soft} fill={C.bg} />
+            <circle cx={cx} cy="8" r="1.5" fill={C.soft} stroke="none" />
+          </React.Fragment>
+        ))}
+        <g transform="translate(60,66) scale(1.25)" stroke={C.mint}>
+          <path d={carabiner} />
+          <rect x="-9" y="8" width="4" height="10" rx="1.5" fill={C.bg} />
+        </g>
+      </g>
+    </svg>
+  )
+}
+
+function Wall({ picked, onPick, revealed }) {
   const done = revealed >= pitches.length
   const lead = pitches[revealed - 1] || pitches[0]
   // Everything climbed up to the picked pitch lights up; the rest stays cold.
@@ -191,6 +241,7 @@ function Wall({ picked, onPick }) {
           )
         })}
       </svg>
+      <RopeFromTop shown={done} />
       {pitches.map((p, i) => {
         const on = p.id === picked
         const up = revealed > i
@@ -305,6 +356,8 @@ const pill = {
 export default function NightWall() {
   const [picked, setPicked] = useState("p5")
   const cur = pitches.find(p => p.id === picked)
+  const revealed = useRouteReveal(pitches.length)
+  const topped = revealed >= pitches.length
 
   return (
     <>
@@ -319,11 +372,13 @@ export default function NightWall() {
       <div className="night-wall relative min-h-screen box-border overflow-hidden"
         style={{ background: C.bg, color: C.ink, fontFamily: `'JetBrains Mono', ui-monospace, monospace`, padding: "28px 24px 40px" }}>
         <Topo />
-        <div className="relative mx-auto flex flex-wrap items-stretch" style={{ maxWidth: 1240, gap: 32 }}>
-          <Wall picked={picked} onPick={setPicked} />
+        <div className="relative mx-auto flex flex-wrap items-stretch" style={{ zIndex: 0, maxWidth: 1240, gap: 32 }}>
+          <Wall picked={picked} onPick={setPicked} revealed={revealed} />
 
-          <div className="min-w-0 self-start flex flex-col"
-            style={{ flex: "1 1 420px", maxWidth: 560, gap: 24, padding: 28, background: "rgba(16,19,41,0.88)", border: `1px solid ${C.line}`, borderRadius: 20 }}>
+          <div className="relative min-w-0 self-start flex flex-col"
+            style={{ flex: "1 1 420px", maxWidth: 560, marginTop: 120, gap: 24, padding: 28, background: "rgba(16,19,41,0.88)", border: `1px solid ${C.line}`, borderRadius: 20 }}>
+            <RopeToAnchor shown={topped} />
+            <Anchor />
             <header className="flex flex-col" style={{ gap: 10 }}>
               <div style={{ fontSize: 13, color: C.muted }}>guidebook · software engineer</div>
               <h1 className="uppercase" style={{ margin: 0, fontFamily: archivo, fontStretch: "125%", fontWeight: 800, fontSize: "clamp(38px, 4.8vw, 64px)", lineHeight: 0.95, letterSpacing: "-0.02em" }}>
